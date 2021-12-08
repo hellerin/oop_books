@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", getBooks)
 function getBooks(){
     // Get data from ls
     const books = ls.getData("books")
+    console.log(books)
     //for each book in books
     books.forEach(function (booksFromLS){
         ui.addBook(booksFromLS)
