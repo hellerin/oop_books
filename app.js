@@ -10,8 +10,17 @@ form.addEventListener("submit", addBook)
 document.addEventListener("DOMContentLoaded", getBooks)
 
 //Books table click event
-bookList = document.querySelector("#book-list")
+const bookList = document.querySelector("#book-list")
 bookList.addEventListener("click", delBook)
+
+// book filter keyboard event
+const filter = document.querySelector("#filter")
+filter.addEventListener("keyup", filterBook)
+
+function filterBook(event){
+    let filter = event.target.value.toLowerCase()
+    ui.filterData(filter)
+}
 
 //delBook
 function delBook(event){
@@ -42,7 +51,6 @@ function addBook(event){
 
     // Create book object with user data
     const book = new Book(title, author, isbn)
-    console.log(book)
 
     // Save book data to ls
     ls.addBook(book)
