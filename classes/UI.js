@@ -30,7 +30,8 @@ class UI {
         click.parentElement.parentElement.remove()
             return true
     } else {
-        return false}
+        return false
+        }
     }
 
     filterData(filter){
