@@ -9,6 +9,20 @@ form.addEventListener("submit", addBook)
 //Page reload
 document.addEventListener("DOMContentLoaded", getBooks)
 
+//Books table click event
+bookList = document.querySelector("#book-list")
+bookList.addEventListener("click", delBook)
+
+//delBook
+function delBook(event){
+    if(event.target.textContent === "x"){
+        const book = ui.getBook(event.target)
+        if(ui.delBook(event.target) === true){
+            ls.delBook(book)
+        }
+    }
+}
+
 function getBooks(){
     // Get data from ls
     const books = ls.getData("books")
